@@ -1,0 +1,178 @@
+<html>
+
+<head>
+    <title>calculatorStyle </title>
+</head>
+<style>
+                              /*-------CSS------ */
+    
+    .main {
+        width: 100%;
+        height: 1000px;
+        /* background: orange; */
+    }
+    body{
+        background-color:#38bdf8;
+    }
+
+    .child {
+        width: 300px;
+        height: 500px;
+        background: white;
+        position: relative;
+        top: 170px;
+        left: 30%;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid black;
+        box-shadow: 5px 5px 20px black;
+    }
+
+    h2 {
+        text-align: center;
+        position: relative;
+        top: -5px;
+    }
+
+    #output {
+        width: 90%;
+        height: 90px;
+        background: gray;
+        position: relative;
+        top: -5px;
+        left: 15px;
+        text-align: right;
+        line-height: 80px;
+        font-size: 32px;
+        overflow: hidden;
+    }
+
+    #part3 {
+        width: 100%;
+        height: 300px;
+        background:none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        top: 30px;
+        padding: 0px;
+        margin: 0px;
+        gap: 0px 15px;
+    }
+
+    #part3 button {
+        width: 60px;
+        height: 50px;
+        background: white;
+        border: none;
+        position: relative;
+        border-radius: 20px;
+        margin: 0px;
+        box-shadow: 1px 1px 5px black;
+        transition: all 0.5s;
+        font-size: 20px;
+    }
+
+    #part3 button:hover {
+        box-shadow: 1px 1px 15px black;
+        transform: scale(0.9);
+    }
+</style>
+
+<body>
+
+                                     <!--------- HTML------- --->
+    <div class="main">
+
+        <div class="child">
+
+            <h2>iOS Calculator</h2>
+            <div id="output"></div>
+            <div id="part3">
+
+
+                <button>AC</button>
+                <button>Del</button>
+                <button>%</button>
+                <button>+</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>*</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>/</button>
+                <button>0</button>
+                <button>.</button>
+                <button>=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>              //..........Script..............//
+
+
+        // string = "";
+
+        // let number = document.querySelectorAll("button");
+        // let output =document.getElementById("output");
+        // number.forEach((number) => {
+        //     number.addEventListener('click', (s) => {
+
+        //         if (s.target.innerHTML == 'AC') {
+        //             string = " ";
+        //             output.innerHTML = string;
+        //         }
+        //         else if (s.target.innerHTML == 'Del') {
+        //             string = string.slice(0, -1);
+        //             output.innerHTML = string;
+        //         }
+        //         else if (s.target.innerHTML == "=") {
+        //             string = eval(string);
+        //             output.innerHTML = string;
+        //         }
+        //         else {
+        //             string = string + s.target.innerHTML;
+        //             output.innerHTML = string;
+        //         }
+        // })
+        // })
+
+        let string="";
+        let output=document.getElementById('output');
+        let number=document.querySelectorAll('button');
+        number.forEach((number)=>{
+        number.addEventListener('click',(e)=>{
+            if(e.target.innerHTML=='AC'){
+                string='';
+                output.innerHTML = string;
+            }
+            else if(e.target.innerHTML=='Del'){
+                string=string.slice(0,-1);
+                output.innerHTML=string;
+
+            }
+            else if(e.target.innerHTML == '='){
+                string= eval(string);
+                output.innerHTML=string;
+            
+            }else{
+                string=string + e.target.innerHTML;
+                output.innerHTML=string;
+                
+            }
+        })
+
+        })
+       
+    </script>
+</body>
+
+</html>
